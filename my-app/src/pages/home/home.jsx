@@ -1,90 +1,48 @@
-import { Card } from "../../components/card/card";
+
+import { Card2 } from "../../components/card2/card2";
 import "./home.scss";
 
 export function PageHome() {
-  const portafolio = [
+  const portafolio = [    
     {
       image:
-        "https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg",
-      title: "LEON COLOR",
-      description: "Leon colorido de logo",
+        "https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/06/Small-living-room-ideas_Grey-sofa-920x552.jpg",
+      title: "Living Room",      
       url: "",
     },
     {
       image:
-        "https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg",
-      title: "Twitter logo",
-      description: "Logo de twitter para usa",
+        "http://img.interempresas.net/FotosArtProductos/P129689.jpg",
+      title: "Bath Room",      
       url: "",
     },
     {
       image:
-        "https://images.squarespace-cdn.com/content/v1/5f62b687cae73d2408a06539/1602807735303-4W086W30YX6B3D23N04L/image-asset.png",
-      title: "Logo fedex",
-      description: "Logo de empresa fedex",
+        "https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/05/Small-kitchen-ideas-featured.jpg",
+      title: "Kitchen Room",      
       url: "",
     },
     {
       image:
-        "https://www.definicionabc.com/wp-content/uploads/2013/11/Logo.png",
-      title: "Starbucks",
-      description: "Logo de starbucks",
+        "https://st.depositphotos.com/1050516/3692/i/600/depositphotos_36922407-stock-photo-luxury-rattan-garden-furniture.jpg",
+      title: "Garden",
       url: "",
-    },
-    {
-      image:
-        "https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg",
-      title: "LEON COLOR",
-      description: "Leon colorido de logo",
-      url: "",
-    },
-    {
-      image:
-        "https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg",
-      title: "Twitter logo",
-      description: "Logo de twitter para usa",
-      url: "",
-    },
-    {
-      image:
-        "https://images.squarespace-cdn.com/content/v1/5f62b687cae73d2408a06539/1602807735303-4W086W30YX6B3D23N04L/image-asset.png",
-      title: "Logo fedex",
-      description: "Logo de empresa fedex",
-      url: "",
-    },
-    {
-      image:
-        "https://www.definicionabc.com/wp-content/uploads/2013/11/Logo.png",
-      title: "Starbucks",
-      description: "Logo de starbucks",
-      url: "",
-    },   
+    }, 
   ];
 
   return (
     <div className="page-home">
-      <h1>Home</h1>      
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
-        adipisci voluptatibus doloremque atque magni perferendis delectus modi
-        hic. Fugit obcaecati pariatur nostrum sint praesentium quia tempora sunt
-        veritatis, reiciendis quis?
-      </p>     
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
-        adipisci voluptatibus doloremque atque magni perferendis delectus modi
-        hic. Fugit obcaecati pariatur nostrum sint praesentium quia tempora sunt
-        veritatis, reiciendis quis?
-      </p>
-      <div className="grid">
-        {portafolio.map((portafolio) => (
-          <Card
-            image={portafolio.image}
-            title={portafolio.title}
-            description={portafolio.description}
-          />
-        ))}
-      </div>
-    </div>
+      <div className="section_1 bg-orange-200	h-80">
+        <p className="text-center text-5xl p-4 font-serif">Encuentra los muebles que te gustan. De forma rápida y segura. Solo en My E-Shop</p>        
+        <div className="flex justify-center space-x-20 font-sans font-bold">
+          {portafolio.map((portafolio) => (
+            <Card2              
+              image={portafolio.image}
+              title={portafolio.title}                         
+            />            
+          ))}                    
+        </div>                
+      </div>      
+    </div>    
   );
 }

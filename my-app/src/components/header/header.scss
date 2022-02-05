@@ -5,11 +5,17 @@
   display: flex;
   justify-content: space-between;
   align-items:center;
-  color:#fff;
-  background: map-get($colors-branding, 'primary');
+  color:#b34202;
+  // background: map-get($colors-branding, 'secondary');
+  background-color: #fff;
 
-  &__logo {
+  &_logo {
     font-size: 40px;
     font-weight:bold;
   }
+
+  &_buy_car {
+    width: 2%;
+  }
+  
 }
