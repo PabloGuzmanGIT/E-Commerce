@@ -8,7 +8,7 @@
   
   ul {
     display: flex;
-    padding: 20px;
+    padding: 15px;
     
   }
 
@@ -28,7 +28,8 @@
     &:hover,
     &.is-active {
       // color: map-get($colors-branding, "secondary");      
-      background: rgb(217, 255, 206);
+      // background: rgb(217, 255, 206);
+      background: #e0f7fa;
       padding:10px;
       border-radius:25px;
     }
