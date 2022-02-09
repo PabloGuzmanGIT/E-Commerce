@@ -5,7 +5,7 @@ import "./header.scss";
 export function Header() {
   return (
     <header className="header">
-      <NavLink className="header_logo flex item-center justify-center" to="/">
+      <NavLink className="header_logo flex item-center justify-center " to="/">
         My E-Shop
       </NavLink>  
       <div className="flex flex-col">
@@ -23,11 +23,11 @@ export function Header() {
         </div> 
         <Nav />
       </div>
-      <div className="w-1/3 flex items-center">
+      <div className="w-3/12 flex items-center justify-center">
         <NavLink className="header_login" to="/">
           Login
         </NavLink> 
-        <img className="header_buy_car  h-100 w-100" src="https://image.flaticon.com/icons/png/512/107/107831.png"></img>
+        <img className="header_buy_car" src="https://image.flaticon.com/icons/png/512/107/107831.png"></img>
       </div>
       
     </header>
