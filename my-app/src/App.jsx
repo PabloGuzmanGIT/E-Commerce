@@ -23,7 +23,7 @@ Componente wrapper
 export function App() {
   return (
     <Router>
-      <div className="wrapper">
+      <div className="wrapper flex-col items-center flex">
         <Header />
         <Main>
           <Switch>
