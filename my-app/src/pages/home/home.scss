@@ -1,5 +1,5 @@
 .page-home {
-
+    position: relative;
     &_section_1{
         display: flex;
         justify-content: center;
@@ -9,7 +9,26 @@
     &_section_2{
         display: flex;
         flex-direction: column;               
+        justify-content: center;
         height: 72rem;
+        
     }
-    
+
+    &_section_3{
+        display: flex;
+        flex-direction: column;        
+        align-items: center;        
+        height: 72rem;  
+        padding-bottom: 100px; 
+        
+        &_content{
+            display: flex;
+            flex-direction: column;            
+            align-items: center;
+            width:1328px;
+            // background-color: antiquewhite;
+            margin:auto;
+            
+        }
+    }
 }
