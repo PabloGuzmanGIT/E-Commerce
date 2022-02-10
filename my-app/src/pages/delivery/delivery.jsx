@@ -6,6 +6,7 @@ import m3 from "../../images/mueble3.jpg"
 import m4 from "../../images/mueble4.jpg"
 import m5 from "../../images/mueble5.jpg"
 import Calendar from "react-calendar"
+import 'react-calendar/dist/Calendar.css';
 
 
 export function PageDelivery() {
@@ -23,7 +24,7 @@ export function PageDelivery() {
       <h2>Ahora tiempo y recibe tus muebles en la comodidad de tu casa !!!</h2>
       </div>
       <section className="DeliveryOptions" >
-        <div>
+        <div className="Cuadros" >
           <p>Ingresa tu DNI</p>
           <input type="text"  />
           <p>Ingresa el codigo del producto</p>
@@ -32,17 +33,21 @@ export function PageDelivery() {
           <input type="text"  />
         </div>
         
-        <div>
-          <Calendar/>
+        <div className="Cuadros" >
+        <p> Elige una Fecha</p>
+          <Calendar  />
         </div>
-        <div>
+        <div className="Cuadros" >
         <p>Ingresa tu telefono</p>
         <input type="phone"  />
         <p> Nuestro Equipo te contactara en los proximos diez minutos </p>
         </div>
       </section>
       <section className="RoundPictures">
-          
+          <img src={m1} alt="" />
+          <img src={m2} alt="" />
+          <img src={m3} alt="" />
+          <img src={m5} alt="" />
       </section>
 
     </div>
