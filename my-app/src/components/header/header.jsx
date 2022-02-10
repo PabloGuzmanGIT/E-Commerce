@@ -24,7 +24,7 @@ export function Header() {
         <Nav />
       </div>
       <div className="w-3/12 flex items-center justify-center">
-        <NavLink className="header_login" to="/">
+        <NavLink  className="header_login" to="/login">
           Login
         </NavLink> 
         <img className="header_buy_car" src="https://image.flaticon.com/icons/png/512/107/107831.png"></img>
