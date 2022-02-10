@@ -9,7 +9,7 @@ export function Card2(props) {
       </figure>
       <div className="card2_text">
         <h2>{title}</h2>
-        <p>{description}</p>
+        <p>{description}</p>        
       </div>      
       <hr />
     </div>

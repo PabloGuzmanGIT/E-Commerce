@@ -3,20 +3,27 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 
   &:hover {
     box-shadow: 0 0 10px rgb(182, 182, 182);
   }
-
+ 
   &__figure {
     img {
-      width: 100%;
+      width: 300px;
       border-radius: 10px;
+      max-height: 300px;
     }
   }
 
   &__text {
     padding: 20px;
+    font-weight: bold;
+    text-align: center;
   }
 
   h2 {

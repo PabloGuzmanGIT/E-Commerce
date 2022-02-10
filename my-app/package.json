@@ -9,6 +9,7 @@
     "calendar": "^0.1.1",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
+    "react-calendar": "^3.7.0",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
@@ -41,6 +42,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.18"
+    "tailwindcss": "^3.0.19"
   }
 }

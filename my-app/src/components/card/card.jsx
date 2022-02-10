@@ -1,6 +1,6 @@
 import "./card.scss";
 export function Card(props) {
-  const { image, title, description, url } = props;
+  const { image, title, description, price,discount } = props;
 
   return (
     <div className="card">
@@ -9,7 +9,9 @@ export function Card(props) {
       </figure>
       <div className="card__text">
         <h2>{title}</h2>
-        <p>{description}</p>
+        <p>{description}</p>  
+        <p>{price}</p>  
+        <p>{discount}</p>          
       </div>
     </div>
   );
