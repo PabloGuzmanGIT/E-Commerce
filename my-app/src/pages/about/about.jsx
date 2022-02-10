@@ -2,6 +2,30 @@ import { Card } from "../../components/card/card";
 import "./about.scss";
 
 export function PageAbout() {
+
+  const modelo = [
+    {
+    image: "https://bodegademuebles.com/wp-content/uploads/2013/04/escritorios-oficina-monterrey-muebles-archiveros-lamparas-sillas-1.jpg",
+    title:"NUESTROS MODELOS",
+    description:"",
+    url:"",
+    },
+    {
+     image: "https://mueblesnunez.com/wp-content/uploads/2020/12/articulo-salon-milan-1001-400x400.jpg",
+     title:"CALIDAD Y GARANTÍA",
+     description:"Nuestra aspiración ha sido siempre hacer felices a nuestros clientes y llenar cada rincón de sus espacios con piezas de calidad, diseño y garantía, por lo que la innovación y adaptación a la nuevas tendencias de diseño y estilo han sido clave en nuestro desempeño. Damos la bienvenida a las nuevas generaciones con innovación constante.",
+     url:"",
+     },
+     {
+     image: "https://i.pinimg.com/originals/3b/2d/95/3b2d95c5ee1fdf5ad51e2633580cd3b6.jpg",
+     title:"DISEÑOS A LA MEDIDA",
+     description:"La dedicación al diseño nos exige una determinación de habilidad y buen gusto. Cada diseño lleva detrás una completa línea de posibilidades ocultas. Los Sofás pueden modificarse por medio de diferentes fundas y tipos de cojines. Los muebles pueden reorganizarse libremente, todo ello en variados colores, estilos y materiales que están perfectamente coordinados al gusto del cliente.",
+     url:"",
+     },
+  ];
+
+  console.log("modelo",modelo);
+
   const portafolio = [
     {
       image:
@@ -35,34 +59,42 @@ export function PageAbout() {
 
   return (
     <div className="page-about">
-      <h1>About</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
-        adipisci voluptatibus doloremque atque magni perferendis delectus modi
-        hic. Fugit obcaecati pariatur nostrum sint praesentium quia tempora sunt
-        veritatis, reiciendis quis?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
-        adipisci voluptatibus doloremque atque magni perferendis delectus modi
-        hic. Fugit obcaecati pariatur nostrum sint praesentium quia tempora sunt
-        veritatis, reiciendis quis?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
-        adipisci voluptatibus doloremque atque magni perferendis delectus modi
-        hic. Fugit obcaecati pariatur nostrum sint praesentium quia tempora sunt
-        veritatis, reiciendis quis?
-      </p>
-      <div className="grid">
-        {portafolio.map((portafolio) => (
-          <Card
-            image={portafolio.image}
-            title={portafolio.title}
-            description={portafolio.description}
-          />
-        ))}
+      <div className="text-center m-auto">
+        <h1>ACERCA DE NOSOTROS</h1>
+          <p className="w-2/3 text-2xl m-auto mb-20 mt-20 leading-10 ">      
+            Somos una empresa en crecimiento dedicada a la fabricación y comercialización de muebles en general de la mas alta 
+            calidad con diseños al gusto de todos nuestros clientes mas exigentes, motivo por el cual, 
+            nos llena de orgullo el trabajo realizado, puesto que, en cada uno de ellas lleva nuestro sello empresarial de calidad y garant&iacute;a.<br/>
+            Agradecemos a toda nuestra clientela por la preferencia demostrada a lo largo de los años y los esperamos en cualquiera de nuestras tiendas en Lima y Provincias.      
+          </p>
+          <div className="mb-20">
+            <Card image={modelo[0].image} title={modelo[0].title}/>          
+          </div>
       </div>
+          <div className="grid grid-cols-2 gap-10 items-center">
+              <div className="width-50">
+                  <h2 className="font-bold">{modelo[1].title}</h2>
+                  <p className="text-xl leading-9">{modelo[1].description}</p>
+              </div>
+              <div>
+                  <figure>
+                    <img src={modelo[1].image} />
+                  </figure>
+              </div>
+          </div> <br/><br/>
+          <div className="grid grid-cols-2 gap-10 items-center">
+            <div>
+                  <figure>
+                    <img  src={modelo[2].image} />
+                  </figure>
+              </div>
+              <div className="width-50">
+                  <h2 className="font-bold">{modelo[2].title}</h2>
+                  <p className="text-xl leading-9">{modelo[2].description}</p>
+              </div>
+              
+          </div>     
+      
     </div>
   );
 }
