@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
 import { useState } from 'react'
-
+import { Form, Input, Button, Select } from 'antd';
 import "./contact.scss";
 
 export function PageContact() {
@@ -17,6 +17,129 @@ export function PageContact() {
     comentario:''
   })
  
+
+  function saveContact(form){ 
+    axios.post("https://61ef3de0d593d20017dbb3bf.mockapi.io/contacto",form)
+    .then(() => {
+      alert("Se guardó correctamente")
+      history.push("home")
+    }).catch(() => {
+      alert("No se pudo guardar, inténtelo de nuevo")
+    })
+  }  
+
+return(
+
+<div>
+      <h1 className="text-center text-6xl mb-20">Contáctese con nosotros</h1>    
+    <Form className="m-auto"
+      name="basic"
+      labelCol={{
+        span: 8,
+      }}
+      wrapperCol={{
+        span: 16,
+      }}
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={(values)=>{
+        console.log("valores",values)
+        saveContact(values)
+      }}
+      onFinishFailed={(errorInfo)=>{
+        console.log("Failed",errorInfo);
+      }}
+      autoComplete="off"    
+     >
+      <div className="grid grid-cols-1 justify-content w-3/5">
+        <div>
+         <Form.Item
+        label="Nombre"
+        name="nombre"
+        rules={[
+          {
+            required: true,
+            message: 'Ingrese su nombre',
+          },
+        ]}
+      >
+        
+        <Input />
+      </Form.Item>
+            
+      <Form.Item
+        label="Apellido"
+        name="apellido"
+        rules={[
+          {
+            required: true,
+            message: 'Ingrese sus apellidos',
+          },
+        ]}
+        >
+        <Input />
+          </Form.Item>
+     
+      <Form.Item
+        label="Correo electrónico"
+        name="correo"
+        rules={[
+          {
+            required: true,
+            message: 'Ingrese su correo electrónico',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+   
+      <Form.Item
+        label="Teléfono"
+        name="telefono"
+        rules={[
+          {
+            required: true,
+            message: 'Ingrese su número telefónico',
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+      
+      <Form.Item
+        label="Comentario"
+        name="comentario"
+        rules={[
+          {
+            required: true,
+            message: 'Ingrese comentarios',
+          },
+        ]}
+         className="m-auto mb-10" >
+      <Input.TextArea showCount maxLength={300} rows={6} cols={100} />
+           
+      </Form.Item>
+      <div className="flex justify-content">
+          <div className="w-1/3">&nbsp;</div>        
+          <Button htmlType="submit" className="bg-blue-300">
+              Enviar mensaje
+          </Button>
+      </div>  
+
+        </div>     
+        </div>
+      </Form>
+      </div>
+	  );
+
+
+
+
+
+
+  /*
+
   function saveContact(){ 
     axios.post("https://61ef3de0d593d20017dbb3bf.mockapi.io/contacto",form)
     .then(() => {
@@ -101,5 +224,6 @@ export function PageContact() {
           </form>
       </div>    
   );     
+            */
 
 }

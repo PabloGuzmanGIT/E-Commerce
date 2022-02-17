@@ -16,6 +16,7 @@ import { PageDelivery } from "./pages/delivery/delivery";
 import { PageContact } from "./pages/contact/contact";
 import { PageLogin } from "./pages/login/login";
 import { PageNotFound } from "./pages/not-found/not-found";
+import 'antd/dist/antd.css';
 import "./assets/style/main.scss";
 
 /*
