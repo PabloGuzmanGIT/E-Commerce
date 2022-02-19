@@ -80,7 +80,7 @@ export function PageHome() {
         </div>    
 
         <div className="page-home_section_2 ">
-          <p className="text-7xl font-bold p-4 font-sans">Más populares en estos momentos</p>        
+          <p className="text-7xl font-bold px-4 font-sans py-10">Más populares en estos momentos</p>        
           <div className="grid-cols-3 flex gap-40 justify-center items-center">
             {portafolio2.map((portafolio2) => (
               <Card

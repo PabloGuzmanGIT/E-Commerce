@@ -28,7 +28,7 @@ export function PageContact() {
   }  
   
   return (
-      <div className="page-contact">
+      <div className="page-contact ">
          <form onSubmit={(event)=>{
            event.preventDefault()
            saveContact()
