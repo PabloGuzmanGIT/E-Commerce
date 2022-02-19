@@ -1,24 +1,24 @@
-import React from 'react';
+
+import {useState} from "react";
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
-import { useState } from 'react'
+import "./register.scss";
 
-import "./contact.scss";
-
-export function PageContact() {
+export function PageRegister() {
 
   let history = useHistory();
 
   const [form, setForm] = useState({
-    nombre:'',
-    apellido:'',
-    correo:'',
-    telefono:'',
-    comentario:''
+    name:'',
+    lastname:'',
+    mail:'',
+    telephone:'',
+    user:'',
+    pass:'',
   })
  
-  function saveContact(){ 
-    axios.post("https://61ef3de0d593d20017dbb3bf.mockapi.io/contacto",form)
+  function saveUser(){ 
+    axios.post("https://61ef3e1fd593d20017dbb3c6.mockapi.io/users",form)
     .then(() => {
       alert("Se guardó correctamente")
       history.push("home")
@@ -28,22 +28,22 @@ export function PageContact() {
   }  
   
   return (
-      <div className="page-contact">
+      <div className="page-register">
          <form onSubmit={(event)=>{
            event.preventDefault()
-           saveContact()
-         }} className="bg-gray-100 m-auto w-4/5" >
-           <h1 className="text-6xl text-center mb-10 pt-10">Contáctanos</h1>
-           <div className="border-black mb-20 w-4/5 m-auto"/>
+           saveUser()
+         }} className="bg-gray-100 m-auto" >
+           <h1 className="text-6xl text-center mb-10 pt-10">Regístrate</h1>
+           <div className="border-black mb-10 w-4/5 m-auto"/>
           <div class="sm:grid sm:grid-cols-2 sm:gap-10 m-auto w-4/5">
             <input 
               type="text"
               placeholder="Nombre"
               className="mb-8 sm:mb-0 w-full p-4 border border-gray-500 rounded-xl focus:outline-none focus:border-gray-900"
-              value={form.nombre}
+              value={form.name}
               required
               onChange={(event) => { 
-                setForm((state) => ({...state, nombre:event.target.value}))
+                setForm((state) => ({...state, name:event.target.value}))
               }}
             />
 
@@ -51,10 +51,10 @@ export function PageContact() {
               type="text"
               placeholder="Apellidos"
               className="mb-8 sm:mb-0 w-full p-4 border border-gray-500 rounded-xl focus:outline-none focus:border-gray-900"
-              value={form.apellido}
+              value={form.lastname}
               required
               onChange={(event) => { 
-                setForm((state) => ({...state, apellido:event.target.value}))
+                setForm((state) => ({...state, lastname:event.target.value}))
               }}
             />
 
@@ -62,10 +62,10 @@ export function PageContact() {
               type="email"
               placeholder="Correo electrónico"
               className="mb-8 sm:mb-0 w-full p-4 border border-gray-500 rounded-xl focus:outline-none focus:border-gray-900"
-              value={form.correo}
+              value={form.mail}
               required
               onChange={(event) => { 
-                setForm((state) => ({...state, correo:event.target.value}))
+                setForm((state) => ({...state, mail:event.target.value}))
               }}
             />
 
@@ -73,32 +73,44 @@ export function PageContact() {
               type="tel"
               placeholder="Número de teléfono"
               className="mb-8 sm:mb-0 w-full p-4 border border-gray-500 rounded-xl focus:outline-none focus:border-gray-900"
-              value={form.telefono}
+              value={form.telephone}
               required
               onChange={(event) => { 
-                setForm((state) => ({...state, telefono:event.target.value}))
+                setForm((state) => ({...state, telephone:event.target.value}))
               }}
             />
 
-            <textarea 
+            <input 
               type="text"
-              placeholder="Comentario"
-              className="w-full p-4 border border-gray-500 rounded-xl focus:outline-none focus:border-gray-900 col-span-2"
-              rows="10"
-              value={form.comentario}
+              placeholder="Usuario"
+              className="mb-8 sm:mb-0 w-full p-4 border border-gray-500 rounded-xl focus:outline-none focus:border-gray-900"
+              value={form.user}
               required
               onChange={(event) => { 
-                setForm((state) => ({...state, comentario:event.target.value}))
+                setForm((state) => ({...state, user:event.target.value}))
               }}
-            />           
+            />
+
+             <input 
+              type="password"
+              placeholder="Contraseña"
+              className="mb-8 sm:mb-0 w-full p-4 border border-gray-500 rounded-xl focus:outline-none focus:border-gray-900"
+              value={form.pass}
+              required
+              onChange={(event) => { 
+                setForm((state) => ({...state, pass:event.target.value}))
+              }}
+            />        
           </div>
           <div className="flex justify-center pt-10">
-            <button className="bg-color-footer py-8 px-20 text-white rounded-xl min-w mb-10">
-              Enviar mensaje
+            <button className="bg-green-600 py-6 px-20 text-white rounded-xl min-w mb-5">
+              Registrarme
             </button>
           </div>
-          </form>
+        </form>
       </div>    
   );     
 
+
+  
 }

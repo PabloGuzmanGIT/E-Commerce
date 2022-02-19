@@ -15,6 +15,7 @@ import { PageCatalog } from "./pages/catalog/catalog";
 import { PageDelivery } from "./pages/delivery/delivery";
 import { PageContact } from "./pages/contact/contact";
 import { PageLogin } from "./pages/login/login";
+import { PageRegister } from "./pages/register/register";
 import { PageNotFound } from "./pages/not-found/not-found";
 import "./assets/style/main.scss";
 
@@ -45,6 +46,9 @@ export function App() {
             </Route>
             <Route path="/login">
               <PageLogin />
+            </Route>
+            <Route path="/register">
+              <PageRegister />
             </Route>
             <Redirect exact from="/" to="/home" />
             <Route path="*">
