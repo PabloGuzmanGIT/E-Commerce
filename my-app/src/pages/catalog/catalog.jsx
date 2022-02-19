@@ -90,8 +90,6 @@ export function PageCatalog() {
   ];
 
   return (
-  <div>Page Catalogo</div>
-    /*
     <div className="page-catalog">
       <h1>Catalog</h1>
       <div className="grid">
@@ -103,6 +101,6 @@ export function PageCatalog() {
           />
         ))}
       </div>
-    </div> */
+    </div>
   );
 }
