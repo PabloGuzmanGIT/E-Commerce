@@ -138,9 +138,8 @@ export function Header() {
                 evt.preventDefault();
                 getSearch(valueSearch);
               }}
-              className="flex items-center justify-center border-2 rounded-bl-full w-full"
-            >
-              <div className="flex justify-content">
+              className="flex items-center justify-center border-2 rounded-bl-full w-full">
+              <div className="flex justify-content w-full">
               <input
                 type="text"
                 className="header_input_search text-3xl text-black bg-cyan-50  w-full py-6 px-6 "
