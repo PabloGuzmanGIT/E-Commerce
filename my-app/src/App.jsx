@@ -4,7 +4,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-
+import { Provider } from "react-redux";
 import { Header } from "./components/header/header";
 import { Main } from "./components/main/main";
 import { Footer } from "./components/footer/footer";
@@ -17,7 +17,8 @@ import { PageContact } from "./pages/contact/contact";
 import { PageLogin } from "./pages/login/login";
 import { PageRegister } from "./pages/register/register";
 import { PageNotFound } from "./pages/not-found/not-found";
-import 'antd/dist/antd.css';
+import { store } from "./store/store";
+import "antd/dist/antd.css";
 import "./assets/style/main.scss";
 
 /*
@@ -25,40 +26,42 @@ Componente wrapper
 */
 export function App() {
   return (
-    <Router>
-      <div className="wrapper flex-col items-center flex">
-        <Header />
-        <Main>
-          <Switch>
-            <Route path="/home">
-              <PageHome />
-            </Route>
-            <Route path="/catalog">
-              <PageCatalog />
-            </Route>
-            <Route path="/delivery">
-              <PageDelivery />
-            </Route>
-            <Route path="/contact">
-              <PageContact />
-            </Route>
-            <Route path="/about">
-              <PageAbout />
-            </Route>
-            <Route path="/login">
-              <PageLogin />
-            </Route>
-            <Route path="/register">
-              <PageRegister />
-            </Route>
-            <Redirect exact from="/" to="/home" />
-            <Route path="*">
-              <PageNotFound />
-            </Route>
-          </Switch>
-        </Main>
-        <Footer />
-      </div>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <div className="wrapper flex-col items-center flex">
+          <Header />
+          <Main>
+            <Switch>
+              <Route path="/home">
+                <PageHome />
+              </Route>
+              <Route path="/catalog">
+                <PageCatalog />
+              </Route>
+              <Route path="/delivery">
+                <PageDelivery />
+              </Route>
+              <Route path="/contact">
+                <PageContact />
+              </Route>
+              <Route path="/about">
+                <PageAbout />
+              </Route>
+              <Route path="/login">
+                <PageLogin />
+              </Route>
+              <Route path="/register">
+                <PageRegister />
+              </Route>
+              <Redirect exact from="/" to="/home" />
+              <Route path="*">
+                <PageNotFound />
+              </Route>
+            </Switch>
+          </Main>
+          <Footer />
+        </div>
+      </Router>
+    </Provider>
   );
 }

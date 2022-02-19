@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { Card } from "../../components/card/card";
 import "./catalog.scss";
 
@@ -89,20 +90,23 @@ export function PageCatalog() {
     },
   ];
 
+  const resultsSearch = useSelector((state) => state.search);
+
   return (
-  <div>Page Catalogo</div>
-    /*
     <div className="page-catalog">
       <h1>Catalog</h1>
+      {console.log("resultsSearch", resultsSearch)}
       <div className="grid">
-        {portafolio.map((portafolio) => (
-          <Card
-            image={portafolio.image}
-            title={portafolio.title}
-            description={portafolio.description}
-          />
-        ))}
+        {resultsSearch.length > 0
+          ? resultsSearch.map((portafolio) => (
+              <Card
+                image={portafolio.image}
+                title={portafolio.title}
+                description={portafolio.description}
+              />
+            ))
+          : "Realiza una busqueda primero"}
       </div>
-    </div> */
+    </div>
   );
 }
