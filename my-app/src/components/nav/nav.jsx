@@ -1,6 +1,14 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Dropdown } from "../dropdown/dropdown";
 import "./nav.scss";
+import { useSelector } from "react-redux";
+
 export function Nav() {
+  const [toggleLogin, setToggleLogin] = useState(false);
+  const user = useSelector((state) => state.auth.user);
+  const isLogin = useSelector((state) => state.auth.isLogin);
+
   return (
     <nav className="nav">
       <ul>        
@@ -28,7 +36,7 @@ export function Nav() {
           <NavLink to="/about" activeClassName="is-active">
             About
           </NavLink>
-        </li>
+        </li>        
       </ul>
     </nav>
   );

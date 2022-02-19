@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Dropdown } from "../dropdown/dropdown";
 import { NavLink, fill } from "react-router-dom";
 import { Nav } from "../nav/nav";
 import { useDispatch } from "react-redux";
@@ -7,6 +8,7 @@ import "./header.scss";
 import { useSelector } from "react-redux";
 
 export function Header() {
+  const [toggleLogin, setToggleLogin] = useState(true);
     const user = useSelector((state) => state.auth.user);
     const isLogin = useSelector((state)=>state.auth.isLogin);
       
@@ -129,14 +131,15 @@ export function Header() {
         My E-Shop
       </NavLink>
       <div className="flex flex-col">
-        <div className="flex items-center justify-center">
-          <div className="flex items-center justify-center border-2 rounded-bl-full w-full">
+        <div className="flex items-center justify-center">       
+        <div className="w-full">          
             <form
               onSubmit={(evt) => {
                 evt.preventDefault();
                 getSearch(valueSearch);
               }}
             >
+              <div className="flex justify-content">
               <input
                 type="text"
                 className="header_input_search text-3xl text-black bg-cyan-50  w-full py-6 px-6 "
@@ -153,22 +156,41 @@ export function Header() {
                   <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
                 </svg>
               </button>
+              </div>
             </form>
           </div>
         </div>
         <Nav />
       </div>
       <div className="w-3/12 flex items-center justify-center">
-        {user ?
-          <span>BIENVENIDO {user.name}</span> :      
-        <NavLink  className="header_login" to="/login">
-          Login
-        </NavLink> 
-        }
-        <img className="header_buy_car" src="https://image.flaticon.com/icons/png/512/107/107831.png"></img>
-        <NavLink className="header_login" to="/login">
-          Login
-        </NavLink>
+      {user ? (
+          <li>
+            <span
+              onClick={() => {
+                setToggleLogin(!toggleLogin);
+                console.log("valor del toggle",toggleLogin);
+              }}
+            >
+              Bienvenido {user.name}
+            </span>
+            {toggleLogin && (
+              <Dropdown
+                items={[
+                  {
+                    url: "/logout",
+                    text: "logout",
+                  },
+                ]}
+              />
+            )}
+          </li>
+        ) : (
+          <li>
+            <NavLink to="/login" activeClassName="is-active" className="header_login">
+              Login
+            </NavLink>
+          </li>
+        )}   
         <img
           className="header_buy_car"
           src="https://image.flaticon.com/icons/png/512/107/107831.png"

@@ -77,7 +77,7 @@
       "password": "123456",
       "response": {
         "data": {
-          "name": "Pepito",
+          "name": "Juanito",
           "lastname": "Perez",
           "age": 35
         }
@@ -88,8 +88,8 @@
       "password": "123456",
       "response": {
         "data": {
-          "name": "Jose",
-          "lastname": "Yabiku",
+          "name": "Rosita",
+          "lastname": "Rojas",
           "age": 33
         }
       }
@@ -97,10 +97,10 @@
   ],
   "contacto": [
     {
-      "nombre": "sebastian",
-      "apellido": "yabiku",
+      "nombre": "Pepito",
+      "apellido": "Ramirez",
       "telefono": "923708059",
-      "correo": "sby2710@gmail.com",
+      "correo": "pramirez@gmail.com",
       "pais": "peru",
       "presupuesto": "500-1000",
       "comentario": "jajaja hola mundo!!!!!!",

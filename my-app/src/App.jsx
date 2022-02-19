@@ -16,12 +16,12 @@ import { PageCatalogoDetalle } from "./pages/catalog/detalle/catalogo-detalle";
 import { PageDelivery } from "./pages/delivery/delivery";
 import { PageContact } from "./pages/contact/contact";
 import { PageLogin } from "./pages/login/login";
+import { PageLogout } from "./pages/logout/logout";
 import { PageRegister } from "./pages/register/register";
 import { PageNotFound } from "./pages/not-found/not-found";
 import "antd/dist/antd.css";
 import "./assets/style/main.scss";
 import { store, persistor } from "./store/store";
-
 /*
 Componente wrapper
 */
@@ -54,6 +54,9 @@ export function App() {
             </Route>
             <Route path="/login">
               <PageLogin />
+            </Route>
+            <Route path="/logout">
+              <PageLogout />
             </Route>
             <Route path="/register">
                 <PageRegister />
