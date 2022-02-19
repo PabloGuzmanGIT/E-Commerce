@@ -25,7 +25,7 @@ export function PageCatalog() {
   return (
  
 
-    <div className="page-portafolio">
+    <div className="page-catalog">
       <h1 className="text-center">Catálogo</h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
         {catalogo.map((item) => (
