@@ -17,6 +17,7 @@ import { PageContact } from "./pages/contact/contact";
 import { PageLogin } from "./pages/login/login";
 import { PageRegister } from "./pages/register/register";
 import { PageNotFound } from "./pages/not-found/not-found";
+import 'antd/dist/antd.css';
 import "./assets/style/main.scss";
 
 /*
