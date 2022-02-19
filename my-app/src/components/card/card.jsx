@@ -1,9 +1,11 @@
+import { Link, useHistory } from "react-router-dom";
 import "./card.scss";
 export function Card(props) {
-  const { image, title, description, price,discount } = props;
+  const { image, title, description, id, price,discount } = props;
 
   return (
     <div className="card">
+       <Link to={`catalog/${id}`}>
       <figure className="card__figure">
         <img src={image} />
       </figure>
@@ -13,6 +15,7 @@ export function Card(props) {
         <p>{price}</p>  
         <p>{discount}</p>          
       </div>
+      </Link>
     </div>
   );
 }

@@ -1,96 +1,52 @@
+import { useState, useEffect }  from "react";
 import { Card } from "../../components/card/card";
+import { getCatalogServices } from "services/catalog.js";
 import "./catalog.scss";
 
 export function PageCatalog() {
-  const portafolio = [
-    {
-      image:
-        "https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg",
-      title: "LEON COLOR",
-      description: "Leon colorido de logo",
-      url: "",
-    },
-    {
-      image:
-        "https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg",
-      title: "Twitter logo",
-      description: "Logo de twitter para usa",
-      url: "",
-    },
-    {
-      image:
-        "https://images.squarespace-cdn.com/content/v1/5f62b687cae73d2408a06539/1602807735303-4W086W30YX6B3D23N04L/image-asset.png",
-      title: "Logo fedex",
-      description: "Logo de empresa fedex",
-      url: "",
-    },
-    {
-      image:
-        "https://www.definicionabc.com/wp-content/uploads/2013/11/Logo.png",
-      title: "Starbucks",
-      description: "Logo de starbucks",
-      url: "",
-    },
-    {
-      image:
-        "https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg",
-      title: "LEON COLOR",
-      description: "Leon colorido de logo",
-      url: "",
-    },
-    {
-      image:
-        "https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg",
-      title: "Twitter logo",
-      description: "Logo de twitter para usa",
-      url: "",
-    },
-    {
-      image:
-        "https://images.squarespace-cdn.com/content/v1/5f62b687cae73d2408a06539/1602807735303-4W086W30YX6B3D23N04L/image-asset.png",
-      title: "Logo fedex",
-      description: "Logo de empresa fedex",
-      url: "",
-    },
-    {
-      image:
-        "https://www.definicionabc.com/wp-content/uploads/2013/11/Logo.png",
-      title: "Starbucks",
-      description: "Logo de starbucks",
-      url: "",
-    },
-    {
-      image:
-        "https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg",
-      title: "LEON COLOR",
-      description: "Leon colorido de logo",
-      url: "",
-    },
-    {
-      image:
-        "https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg",
-      title: "Twitter logo",
-      description: "Logo de twitter para usa",
-      url: "",
-    },
-    {
-      image:
-        "https://images.squarespace-cdn.com/content/v1/5f62b687cae73d2408a06539/1602807735303-4W086W30YX6B3D23N04L/image-asset.png",
-      title: "Logo fedex",
-      description: "Logo de empresa fedex",
-      url: "",
-    },
-    {
-      image:
-        "https://www.definicionabc.com/wp-content/uploads/2013/11/Logo.png",
-      title: "Starbucks",
-      description: "Logo de starbucks",
-      url: "",
-    },
-  ];
+  const [catalogo, setCatalogo] = useState([]);
+
+  async function getCatalogo() {
+    try {
+      const { data } = await getCatalogServices();
+      setCatalogo(data);
+      console.log(data);
+    } catch (e) {
+      alert("No se pudo obtener los datos");
+    }
+  }
+
+  useEffect(() => {
+    (async () => {
+      await getCatalogo();
+    })()
+  },[]);
 
   return (
-  <div>Page Catalogo</div>
+ 
+
+    <div className="page-portafolio">
+      <h1 className="text-center">Catálogo</h1>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
+        {catalogo.map((item) => (
+          <Card
+            key={item.id}
+            image={item.image}
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            id={item.id}         
+          />
+        ))}
+      </div>
+    </div>
+
+
+
+
+
+
+
     /*
     <div className="page-catalog">
       <h1>Catalog</h1>

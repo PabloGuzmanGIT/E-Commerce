@@ -1,8 +1,12 @@
 import { NavLink,fill } from "react-router-dom";
 import { Nav } from "../nav/nav";
 import "./header.scss";
+import { useSelector } from "react-redux";
 
 export function Header() {
+    const user = useSelector((state) => state.auth.user);
+    const isLogin = useSelector((state)=>state.auth.isLogin);
+      
   return (
     <header className="header">
       <NavLink className="header_logo flex item-center justify-center " to="/">
@@ -24,9 +28,12 @@ export function Header() {
         <Nav />
       </div>
       <div className="w-3/12 flex items-center justify-center">
+        {user ?
+          <span>BIENVENIDO {user.name}</span> :      
         <NavLink  className="header_login" to="/login">
           Login
         </NavLink> 
+        }
         <img className="header_buy_car" src="https://image.flaticon.com/icons/png/512/107/107831.png"></img>
       </div>
       
