@@ -131,13 +131,19 @@ export function Header() {
         My E-Shop
       </NavLink>
       <div className="flex flex-col">
+<<<<<<< HEAD
         <div className="flex items-center justify-center">       
         <div className="w-full">          
+=======
+        <div className="flex items-center justify-center">
+          <div className="w-full">
+>>>>>>> 1dedc53f2317afa6c0ddf20b9902e13286765023
             <form
               onSubmit={(evt) => {
                 evt.preventDefault();
                 getSearch(valueSearch);
               }}
+              className="flex items-center justify-center border-2 rounded-bl-full w-full"
             >
               <div className="flex justify-content">
               <input
@@ -163,6 +169,7 @@ export function Header() {
         <Nav />
       </div>
       <div className="w-3/12 flex items-center justify-center">
+<<<<<<< HEAD
       {user ? (
           <li>
             <span
@@ -191,6 +198,14 @@ export function Header() {
             </NavLink>
           </li>
         )}   
+=======
+        {user ?
+          <span>BIENVENIDO {user.name}</span> :      
+        <NavLink  className="header_login" to="/login">
+          Login
+        </NavLink> 
+        }      
+>>>>>>> 1dedc53f2317afa6c0ddf20b9902e13286765023
         <img
           className="header_buy_car"
           src="https://image.flaticon.com/icons/png/512/107/107831.png"
