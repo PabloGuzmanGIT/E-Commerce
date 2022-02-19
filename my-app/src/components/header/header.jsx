@@ -130,12 +130,13 @@ export function Header() {
       </NavLink>
       <div className="flex flex-col">
         <div className="flex items-center justify-center">
-          <div className="flex items-center justify-center border-2 rounded-bl-full w-full">
+          <div className="w-full">
             <form
               onSubmit={(evt) => {
                 evt.preventDefault();
                 getSearch(valueSearch);
               }}
+              className="flex items-center justify-center border-2 rounded-bl-full w-full"
             >
               <input
                 type="text"
@@ -164,11 +165,7 @@ export function Header() {
         <NavLink  className="header_login" to="/login">
           Login
         </NavLink> 
-        }
-        <img className="header_buy_car" src="https://image.flaticon.com/icons/png/512/107/107831.png"></img>
-        <NavLink className="header_login" to="/login">
-          Login
-        </NavLink>
+        }      
         <img
           className="header_buy_car"
           src="https://image.flaticon.com/icons/png/512/107/107831.png"
