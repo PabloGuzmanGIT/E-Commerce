@@ -1,0 +1,30 @@
+ //     <div className="py-10">
+          <button className="bg-green-300 text-white py-6 px-10 rounded-2x1 mb-10"
+    //     onClick={() => {
+    //       history.push("/catalog");
+    //     }}
+    //   >
+    //     Volver
+    //   </button>
+    //         <div>
+    //           <img src={mainImg} alt="" />
+    //         </div>
+    //         <div>
+    //           {/* {catalogo.muebles.pictures.map()} */}
+    //           <img src="" alt="" onClick="" />
+    //           <img src="" alt="" />
+    //           <img src="" alt="" />
+    //         </div>
+    //         <div>
+    //           {/* descripcion */}
+    //         </div>
+    //         <div>
+    //           {/* boton */}
+    //         </div>
+    //   <p>{catalogo.muebles.nombre}</p>
+    //   <p>{catalogo.precio_diario}</p>
+    //   <p>{catalogo.muebles.pictures[0] && catalogo.muebles.pictures[0].ruta}</p>
+    //   <p>{catalogo.cantidad}</p>
+    //   <p></p>
+    // </div>
+  );
