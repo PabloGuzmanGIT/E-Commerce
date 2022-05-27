@@ -22,6 +22,7 @@ import { PageNotFound } from "./pages/not-found/not-found";
 import "antd/dist/antd.css";
 import "./assets/style/main.scss";
 import { store, persistor } from "./store/store";
+
 /*
 Componente wrapper
 */

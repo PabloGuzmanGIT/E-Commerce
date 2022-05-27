@@ -1,16 +1,19 @@
+
 .page-home {
     position: relative;
     &_section_1{
         display: flex;
         justify-content: center;
-        height: 30rem;
+        align-items: center;
+        
     }
 
     &_section_2{
         display: flex;
         flex-direction: column;               
         justify-content: center;
-        height: 72rem;
+        align-items: center;
+       
         
     }
 
@@ -18,17 +21,65 @@
         display: flex;
         flex-direction: column;        
         align-items: center;        
-        height: 72rem;  
+          
         padding-bottom: 100px; 
         
         &_content{
             display: flex;
             flex-direction: column;            
             align-items: center;
-            width:1328px;
+            
             // background-color: antiquewhite;
             margin:auto;
             
         }
     }
 }
+
+
+@media screen and (max-width: 992px) {
+   
+    .page-home_section_1{
+        display: flex;
+        justify-content: center;
+        
+        flex-direction: column;
+
+        .card-import{
+            display: grid;
+        }
+        
+        
+    }
+    .page-home_section_2{
+        display: flex;
+        justify-content: center;
+        
+        flex-direction: column;
+        .card-import{
+            display: grid;
+        }
+        
+    }
+    .page-home_section_3{
+        display: flex;
+        justify-content: center;
+        
+        flex-direction: column;
+        .cuadritos{
+            display: flex;
+            flex-direction: column;
+        }
+        
+    
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        
+        width:100%;
+        margin:auto;
+    }
+    
+  }
+  

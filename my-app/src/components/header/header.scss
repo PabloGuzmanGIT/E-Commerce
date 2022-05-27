@@ -3,26 +3,55 @@
 .header {
   // padding: 20px;
   display: flex;
-  justify-content: space-center;  
+  justify-content: center;  
   align-items:center;
   color:#b34202;
+  width: 100%;
+  // background-color: red;
   // background: map-get($colors-branding, 'secondary');
   // background-color: #fff;
-  width:1328px;
+  // width:1328px;
+  .wrapper{
+    
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: auto;
 
-  &_logo {
-    font-size: 40px;
-    font-weight:bold;
-    width: 35%;
-  }
- 
-  &_login {    
-    color: #000;        
-    font-size: 2.5rem;
+    .log-button{
+      width: 500px;
+      
+      text-align: center;
+      align-items: baseline;
+    }
+    
+    
   }
 
-  &_buy_car {
-    width: 40px;
+
+  
+}
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+  header{
+    display:flex;
+    flex-direction: column;
+  }
+  .wrapper{
+    display: grid;
+    flex-direction: row;
   }
   
+
+    
+  
+  
+
+
+
+
 }

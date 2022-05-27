@@ -63,10 +63,10 @@ export function PageLogin() {
               type="text"
               placeholder="Usuario"
               className="mb-8 sm:mb-0 w-full p-4 border border-gray-500 rounded-xl focus:outline-none focus:border-gray-900"
-              value={formLogin.user}
+              value={formLogin.correo}
               required
               onChange={(event) => 
-                setFormLogin((state) => ({...state, user:event.target.value}))
+                setFormLogin((state) => ({...state, correo:event.target.value}))
               }
             />
 
@@ -74,10 +74,10 @@ export function PageLogin() {
               type="password"
               placeholder="Contraseña"
               className="mb-8 sm:mb-0 w-full p-4 border border-gray-500 rounded-xl focus:outline-none focus:border-gray-900"
-              value={formLogin.pass}
+              value={formLogin.password}
               required
               onChange={(event) =>  
-                setFormLogin((state) => ({...state, pass:event.target.value}))
+                setFormLogin((state) => ({...state, password:event.target.value}))
               }
             />        
           </div>
