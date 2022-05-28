@@ -15,7 +15,7 @@ export function PageLogin() {
   let history = useHistory();
  
   function userExist(user, users) {
-    return users.filter((dataUser) => dataUser.user === user.user)[0];
+    return users.filter((dataUser) => dataUser.correo === user.correo)[0];
   }
 
   async function getLogin() {
@@ -30,40 +30,46 @@ export function PageLogin() {
   }
 
   async function onSubmit(evt) {
-    evt.preventDefault();    
-    // fetch('http://127.0.0.1:8000/auth/login/', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(formLogin)
-    // })
-    //   .then(res => res.json())
-    //   .then(data => { console.log(data) })
+    evt.preventDefault();   
 
-    const usuarios = await getLogin();
-    console.log(usuarios);
-    const response = userExist(formLogin, usuarios)?.response;
-    const isLogin = userExist(formLogin, usuarios)?.response;
+    fetch('http://127.0.0.1:8000/auth/login/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formLogin)
+    })
+      .then(res => res.json())
+      .then(data => {
+        const payload = data.access.split('.')[1];
+        const jsonPayload = JSON.parse(window.atob(payload));
+        console.log(jsonPayload);
+       })
+
+
+    // const usuarios = await getLogin();
+    // console.log(usuarios);
+    // const response = userExist(formLogin, usuarios)?.response;
+    // const isLogin = userExist(formLogin, usuarios)?.response;
 
 
 
-    if (isLogin) {
-      dispatch({
-        type: "SET_IS_LOGIN",
-        payload: true,
-      });
-      dispatch({
-        type: "SET_USER",
-        payload: response.data,
-      });
-      history.push("/home");
-    } else {
-      dispatch({
-        type: "SET_IS_LOGIN",
-        payload: false,
-      });
-    }
+    // if (isLogin) {
+    //   dispatch({
+    //     type: "SET_IS_LOGIN",
+    //     payload: true,
+    //   });
+    //   dispatch({
+    //     type: "SET_USER",
+    //     payload: response.data,
+    //   });
+    //   history.push("/home");
+    // } else {
+    //   dispatch({
+    //     type: "SET_IS_LOGIN",
+    //     payload: false,
+    //   });
+    // }
   }
 
   return (

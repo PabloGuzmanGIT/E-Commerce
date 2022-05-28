@@ -28,7 +28,7 @@ export function PageAbout() {
         "Somos una empresa en crecimiento dedicada a la fabricación y comercialización de muebles en general de la mas alta calidad con diseños al gusto de todos nuestros clientes mas exigentes, motivo por el cual, nos llena de orgullo el trabajo realizado, puesto que, en cada uno de ellas lleva nuestro sello empresarial de calidad y garantía. Agradecemos a toda nuestra clientela por la preferencia demostrada a lo largo de los años y los esperamos en cualquiera de nuestras tiendas en Lima y Provincias.",
     },
     {
-      image: require("../../images/about/cama.jpg"),
+      image: require("../../images/about/cocina.jpg"),
       title: "CALIDAD Y GARANTÍA",
       description:
         "Nuestra aspiración ha sido siempre hacer felices a nuestros clientes y llenar cada rincón de sus espacios con piezas de calidad, diseño y garantía, por lo que la innovación y adaptación a la nuevas tendencias de diseño y estilo han sido clave en nuestro desempeño. Damos la bienvenida a las nuevas generaciones con innovación constante.",
