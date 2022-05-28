@@ -36,7 +36,7 @@ export function PageRegister() {
          }} className="bg-gray-100 m-auto border-solid border-2 border-color-footer" >
            <h1 className="text-6xl text-center mb-10 pt-10">Regístrate</h1>
            <div className="border-black mb-10 w-4/5 m-auto"/>
-          <div class="sm:grid sm:grid-cols-2 sm:gap-10 m-auto w-4/5">
+          <div className="sm:grid sm:grid-cols-2 sm:gap-10 m-auto w-4/5">
             <input 
               type="text"
               placeholder="Nombre"

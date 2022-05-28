@@ -17,18 +17,19 @@
   }
 
   .u_wrapper {
-    width: auto;
+    width: 1200px;
     height: 100%;
-    min-height: 70px;
+    min-height: 100px;
     display: flex;
     justify-content: space-evenly;
     text-align: center;
     align-items: center;
-
+    padding-top: 20px;
     .login,
     .logo {
       cursor: pointer;
       width: 250px;
+      height: 100%;
       font-size: large;
       align-items: center;
       justify-content: center;
@@ -70,6 +71,7 @@
 
         input {
           width: 70%;
+          height: 35px;
           padding: 1em;
           border-radius: 25px;
           border: 2px solid #ccc;
@@ -102,12 +104,19 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .header {
+    .u_wrapper {
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+}
+
 @media screen and (max-width: 900px) {
   .header {
     height: auto;
     flex-direction: column;
-
-    margin-left: 2em;
     text-align: center;
     justify-content: center;
     align-items: center;

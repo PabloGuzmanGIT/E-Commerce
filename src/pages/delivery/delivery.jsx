@@ -11,7 +11,7 @@ import m5 from "../../images/mueble5.jpg"
 export function PageDelivery() {
   return (
     <div className="page-delivery w-3/4  flex flex-col justify-center items-center">
-      <div class=" py-5 flex flex-col justify-center items-center">        
+      <div className=" py-5 flex flex-col justify-center items-center">        
         <img className=" object-cover w-3/5 h-3/5 py-5 " src={m4} alt=""/>
         <h2 className="text-center text-4xl py-2 font-bold animate-bounce" >Ahorra tiempo y recibe tus muebles en la comodidad de tu casa !!!</h2>
       </div>

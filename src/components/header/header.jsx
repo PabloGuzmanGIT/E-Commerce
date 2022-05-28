@@ -25,7 +25,6 @@ export function Header() {
   function getListaCart() {
     let data = localStorage.getItem('cart');
     data = JSON.parse(data);
-    console.log(data);
     setCartItem(data);
   }
 
@@ -87,7 +86,10 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="login">My Cart <img src={imgCarrito} alt="" /></div>
+        <div className="login">
+          My Cart
+          <img src={imgCarrito} alt="" />
+        </div>
         <div className="burger" onClick={() => setNavIsOpen(!navIsOpen)}>
           =
         </div>
