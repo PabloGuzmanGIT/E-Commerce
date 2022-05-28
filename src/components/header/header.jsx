@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dropdown } from "../dropdown/dropdown";
 import { NavLink, fill } from "react-router-dom";
 import { Nav } from "../nav/nav";
@@ -6,6 +6,9 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./header.scss";
 import { useSelector } from "react-redux";
+import { ShoppingCart } from "../ShoppingCart/ShoppingCart";
+import { data } from "autoprefixer";
+import imgCarrito from "../../images/buy-car.png";
 
 export function Header() {
   const [toggleLogin, setToggleLogin] = useState(true);
@@ -15,113 +18,29 @@ export function Header() {
   const [valueSearch, setValueSearch] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
+  const [cartIsOpen, setCartIsOpen] = useState(false);
+  const [cartItem, setCartItem]= useState();
+  
+  function getListaCart(){
+        let data = localStorage.getItem('cart');
+        data = JSON.parse(data);
+        console.log(data);
+        setCartItem(data);
+    }
+
+    useEffect(()=>{
+      getListaCart();
+    },[]);
+
 
   function getSearch(value) {
     // llaamda api del servidor /search
+   
 
-    const results = [
-      {
-        id: 1,
-        image:
-          "https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg",
-        title: "LEON COLOR",
-        description: "Leon colorido de logo",
-        url: "",
-      },
-      {
-        id: 2,
-        image:
-          "https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg",
-        title: "Twitter logo",
-        description: "Logo de twitter para usa",
-        url: "",
-      },
-      {
-        id: 3,
-        image:
-          "https://images.squarespace-cdn.com/content/v1/5f62b687cae73d2408a06539/1602807735303-4W086W30YX6B3D23N04L/image-asset.png",
-        title: "Logo fedex",
-        description: "Logo de empresa fedex",
-        url: "",
-      },
-      {
-        id: 4,
-        image:
-          "https://www.definicionabc.com/wp-content/uploads/2013/11/Logo.png",
-        title: "Starbucks",
-        description: "Logo de starbucks",
-        url: "",
-      },
-      {
-        id: 5,
-        image:
-          "https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg",
-        title: "LEON COLOR",
-        description: "Leon colorido de logo",
-        url: "",
-      },
-      {
-        id: 6,
-        image:
-          "https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg",
-        title: "Twitter logo",
-        description: "Logo de twitter para usa",
-        url: "",
-      },
-      {
-        id: 7,
-        image:
-          "https://images.squarespace-cdn.com/content/v1/5f62b687cae73d2408a06539/1602807735303-4W086W30YX6B3D23N04L/image-asset.png",
-        title: "Logo fedex",
-        description: "Logo de empresa fedex",
-        url: "",
-      },
-      {
-        id: 8,
-        image:
-          "https://www.definicionabc.com/wp-content/uploads/2013/11/Logo.png",
-        title: "Starbucks",
-        description: "Logo de starbucks",
-        url: "",
-      },
-      {
-        id: 9,
-        image:
-          "https://i.pinimg.com/736x/33/b8/69/33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg",
-        title: "LEON COLOR",
-        description: "Leon colorido de logo",
-        url: "",
-      },
-      {
-        id: 10,
-        image:
-          "https://www.tailorbrands.com/wp-content/uploads/2020/07/twitter-logo.jpg",
-        title: "Twitter logo",
-        description: "Logo de twitter para usa",
-        url: "",
-      },
-      {
-        id: 11,
-        image:
-          "https://images.squarespace-cdn.com/content/v1/5f62b687cae73d2408a06539/1602807735303-4W086W30YX6B3D23N04L/image-asset.png",
-        title: "Logo fedex",
-        description: "Logo de empresa fedex",
-        url: "",
-      },
-      {
-        id: 12,
-        image:
-          "https://www.definicionabc.com/wp-content/uploads/2013/11/Logo.png",
-        title: "Starbucks",
-        description: "Logo de starbucks",
-        url: "",
-      },
-    ];
-
-    dispatch({
-      type: "SET_SEARCH",
-      payload: results,
-    });
+    // dispatch({
+    //   type: "SET_SEARCH",
+    //   payload: results,
+    // });
     history.push("/catalog");
   }
 
@@ -192,12 +111,17 @@ export function Header() {
           </li>
         )}   
              
-        <img
+        <img       
+          src={imgCarrito}
           className="header_buy_car"
-          src="https://image.flaticon.com/icons/png/512/107/107831.png"
+          onClick={()=>setCartIsOpen(true)}
         ></img>
-      </div>
       
+
+      </div>
+      {
+        cartIsOpen == true ? <ShoppingCart lista={cartItem} setCartIsOpen={setCartIsOpen} /> : null
+      }
     </header>
   );
 }

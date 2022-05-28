@@ -37,11 +37,7 @@ export function PageCatalogoDetalle() {
   }, [params.id]);
 
   return ( 
-      <div className="py-10">
-         <button className="bg-green-300 text-white py-6 px-10 rounded-2xl mb-10" 
-         onClick={() => {
-         history.push("/catalog")
-       }}>Volver</button>
+      <div className="py-10">        
       <CardDetalle
             imagen={catalogo.muebles.pictures[0]?.ruta}
             nombre={catalogo.muebles?.nombre}

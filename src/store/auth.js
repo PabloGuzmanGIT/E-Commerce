@@ -1,6 +1,6 @@
 const initialState = {
     isLogin: false,
-    user: null,
+    correo: null,
   };
   
   export function reducerAuth(state = initialState, action) {
@@ -15,7 +15,7 @@ const initialState = {
       case "SET_USER": {
         return {
           ...state,
-          user: action.payload,
+          correo: action.payload,
         };
       }
   

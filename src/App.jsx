@@ -22,55 +22,57 @@ import { PageNotFound } from "./pages/not-found/not-found";
 import "antd/dist/antd.css";
 import "./assets/style/main.scss";
 import { store, persistor } from "./store/store";
+
 /*
 Componente wrapper
 */
 export function App() {
   return (
     <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-    <Router>
-      <div className="wrapper flex-col items-center flex">
-        <Header />
-        <Main>
-          <Switch>
-            <Route path="/home">
-              <PageHome />
-            </Route>
-            <Route exact path="/catalog">
-              <PageCatalog />
-            </Route>
-            <Route path="/catalog/:id">
-              <PageCatalogoDetalle />
-            </Route>
-            <Route path="/delivery">
-              <PageDelivery />
-            </Route>
-            <Route path="/contact">
-              <PageContact />
-            </Route>
-            <Route path="/about">
-              <PageAbout />
-            </Route>
-            <Route path="/login">
-              <PageLogin />
-            </Route>
-            <Route path="/logout">
-              <PageLogout />
-            </Route>
-            <Route path="/register">
-                <PageRegister />
-              </Route>
-            <Redirect exact from="/" to="/home" />
-            <Route path="*">
-              <PageNotFound />
-            </Route>
-          </Switch>
-        </Main>
-        <Footer />
-      </div>
-    </Router>
-    </PersistGate>      
+      <PersistGate loading={null} persistor={persistor}>
+        <Router>
+          <div className="wrapper flex-col items-center flex">
+            <Header />
+            <Main>
+              <Switch>
+                <Route path="/home">
+                  <PageHome />
+                </Route>
+                <Route exact path="/catalog">
+                  <PageCatalog />
+                </Route>
+                <Route path="/catalog/:id">
+                  <PageCatalogoDetalle />
+                </Route>
+                <Route path="/delivery">
+                  <PageDelivery />
+                </Route>
+                <Route path="/contact">
+                  <PageContact />
+                </Route>
+                <Route path="/about">
+                  <PageAbout />
+                </Route>
+                <Route path="/login">
+                  <PageLogin />
+                </Route>
+                <Route path="/logout">
+                  <PageLogout />
+                </Route>
+                <Route path="/register">
+                  <PageRegister />
+                </Route>
+                <Redirect exact from="/" to="/home" />
+                <Route path="*">
+                  <PageNotFound />
+                </Route>
+              </Switch>
+            </Main>
+            <Footer />
+           
+          </div>
+        </Router>
+      </PersistGate>
     </Provider>
   );
 }
