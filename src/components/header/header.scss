@@ -1,28 +1,194 @@
 @import "../../assets/style/variables";
 
 .header {
-  // padding: 20px;
+  width: 100%;
+  height: 100px;
   display: flex;
-  justify-content: space-center;  
-  align-items:center;
-  color:#b34202;
-  // background: map-get($colors-branding, 'secondary');
-  // background-color: #fff;
-  width:1328px;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(244, 244, 244, 0.7343312324929971) 0%,
+    rgba(255, 255, 255, 1) 46%,
+    rgba(244, 244, 244, 1) 90%
+  );
 
-  &_logo {
-    font-size: 40px;
-    font-weight:bold;
-    width: 35%;
-  }
- 
-  &_login {    
-    color: #000;        
-    font-size: 2.5rem;
+  .mobile-nav {
+    display: none;
   }
 
-  &_buy_car {
-    width: 40px;
+  .u_wrapper {
+    width: auto;
+    height: 100%;
+    min-height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+
+    .login,
+    .logo {
+      cursor: pointer;
+      width: 250px;
+      font-size: large;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .burger {
+      display: none;
+      cursor: pointer;
+    }
+    .logo {
+      color: #b34202;
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    .login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      img {
+        display: inline;
+        height: 25px;
+        width: 25px;
+      }
+    }
+
+    .opciones {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+
+      .buscador {
+        width: 100%;
+        height: 50%;
+
+        input {
+          width: 70%;
+          padding: 1em;
+          border-radius: 25px;
+          border: 2px solid #ccc;
+        }
+      }
+
+      .nav {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+
+        ul {
+          width: 100%;
+          justify-content: space-between;
+          text-align: center;
+          align-items: center;
+
+          li {
+            width: 100%;
+            text-align: center;
+            align-items: center;
+          }
+        }
+      }
+    }
   }
-  
 }
+
+@media screen and (max-width: 900px) {
+  .header {
+    height: auto;
+    flex-direction: column;
+
+    margin-left: 2em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .u_wrapper {
+      width: auto;
+      justify-content: space-between;
+
+      .login {
+        display: none;
+
+        &:hover {
+          color: white;
+        }
+
+        img {
+          height: 40px;
+          width: 40px;
+        }
+      }
+
+      .burger {
+        display: block;
+        width: 100px;
+        background: linear-gradient(
+          90deg,
+          rgba(166, 164, 14, 0.7343312324929971) 0%,
+          rgba(233, 212, 85, 1) 50%,
+          rgba(129, 113, 20, 1) 90%
+        );
+        border-radius: 20px;
+        margin-bottom: 1em;
+      }
+
+      .opciones {
+        display: none;
+      }
+    }
+
+    .mobile-nav {
+      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      li {
+        border-radius: 25px;
+        background-color: #e0f7fa;
+        margin-bottom: 1em;
+      }
+    }
+
+    .active {
+      display: none;
+    }
+  }
+}
+
+// .header {
+//   // padding: 20px;
+//   display: flex;
+//   justify-content: space-center;
+//   align-items:center;
+// color:#b34202;
+//   // background: map-get($colors-branding, 'secondary');
+//   // background-color: #fff;
+//   width:1328px;
+
+//   &_logo {
+//     font-size: 40px;
+//     font-weight:bold;
+//     width: 35%;
+//   }
+
+//   &_login {
+//     color: #000;
+//     font-size: 2.5rem;
+//   }
+
+//   &_buy_car {
+//     width: 40px;
+//   }
+
+// }

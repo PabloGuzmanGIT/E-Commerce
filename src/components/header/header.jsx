@@ -20,6 +20,7 @@ export function Header() {
   const history = useHistory();
   const [cartIsOpen, setCartIsOpen] = useState(false);
   const [cartItem, setCartItem] = useState();
+  const [navIsOpen, setNavIsOpen] = useState(false);
 
   function getListaCart() {
     let data = localStorage.getItem('cart');
@@ -86,7 +87,7 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="login">My E-Shop</div>
+        <div className="login">My Cart <img src={imgCarrito} alt="" /></div>
         <div className="burger" onClick={() => setNavIsOpen(!navIsOpen)}>
           =
         </div>

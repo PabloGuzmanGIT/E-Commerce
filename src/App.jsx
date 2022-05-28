@@ -68,7 +68,7 @@ export function App() {
                 </Route>
               </Switch>
             </Main>
-            <Footer />
+            {/* <Footer /> */}
            
           </div>
         </Router>
