@@ -31,7 +31,7 @@ export function App() {
     <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
     <Router>
-      <div className="wrapper flex-col items-center flex">
+      <div>
         <Header />
         <Main>
           <Switch>

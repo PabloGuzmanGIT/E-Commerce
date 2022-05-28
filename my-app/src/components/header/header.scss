@@ -1,101 +1,231 @@
 @import "../../assets/style/variables";
 
 .header {
-  // padding: 20px;
+  margin: 4em;
+  width: 100%;
+  height: 70px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
+  background-color: #fcde70;
+  text-align: center;
 
-  .envoltorio2 {
+  .mobile-nav {
     display: none;
-    width: 100%;
-    height: auto;
-
-    .navsecond {
-      display: none;
-      width: 100%;
-      height: 100px;
-    }
-
   }
 
-  .wrapper {
-
-    width: 100%;
+  .u_wrapper {
+    width: auto;
+    height: 100%;
+    min-height: 70px;
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
-    height: auto;
-    align-items: center;
     text-align: center;
-    align-content: center;
+    align-items: center;
 
-    .nav-button {
-
-      display: flex;
-      flex-direction: column;
-    }
-
-    .log-button {
-      width: 500px;
-      text-align: center;
-      align-items: baseline;
-    }
-
-
-  }
-
-
-
-}
-
-@media screen and (max-width: 992px) {
-  
-
-  .header {
-
-
-    .wrapper {
-      display: none
-    }
-
-    .envoltorio2 {
-
-      display: block;
-      width: 100%;
-      height: auto;
+    .login,
+    .logo {
+      width: 150px;
+      font-size: large;
       align-items: center;
-      text-align: center;
+      justify-content: center;
       align-content: center;
+      padding-top: 1em;
+    }
 
-      .navsecond {
-        display: flex;
+    .burger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .opciones {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+
+      .buscador {
         width: 100%;
-        height: auto;
-        align-items: center;
+        height: 50%;
+
+        input {
+          width: 70%;
+          margin-top: 1em;
+        }
+      }
+
+      .nav {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
         text-align: center;
+        align-items: center;
         align-content: center;
 
         ul {
           width: 100%;
-          align-items: center;
+          justify-content: space-between;
           text-align: center;
+          align-items: center;
           align-content: center;
 
           li {
-            align-items: center;
+            width:  100%;
+            justify-content: space-between;
             text-align: center;
+            align-items: center;
             align-content: center;
           }
         }
-
       }
-
-
     }
   }
-
-
 }
+
+@media screen and (max-width: 900px) {
+  .header {
+    height: auto;
+    flex-direction: column;
+
+    .u_wrapper {
+      width: auto;
+      justify-content: space-between;
+
+      .login {
+        display: none;
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      .burger {
+        display: block;
+        width: 100px;
+        background-color: green;
+      }
+
+      .opciones {
+        display: none;
+      }
+    }
+
+    .mobile-nav {
+      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .active {
+      display: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+// .header {
+//   // padding: 20px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   height: auto;
+
+//   .envoltorio2 {
+//     display: none;
+//     width: 100%;
+//     height: auto;
+
+//     .navsecond {
+//       display: none;
+//       width: 100%;
+//       height: 100px;
+//     }
+
+//   }
+
+//   .wrapper {
+
+//     width: 100%;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-evenly;
+//     height: auto;
+//     align-items: center;
+//     text-align: center;
+//     align-content: center;
+
+//     .nav-button {
+
+//       display: flex;
+//       flex-direction: column;
+//     }
+
+//     .log-button {
+//       width: 500px;
+//       text-align: center;
+//       align-items: baseline;
+//     }
+
+
+//   }
+
+
+
+// }
+
+// @media screen and (max-width: 992px) {
+
+
+//   .header {
+
+
+//     .wrapper {
+//       display: none
+//     }
+
+//     .envoltorio2 {
+
+//       display: block;
+//       width: 100%;
+//       height: auto;
+//       align-items: center;
+//       text-align: center;
+//       align-content: center;
+
+//       .navsecond {
+//         display: flex;
+//         width: 100%;
+//         height: auto;
+//         align-items: center;
+//         text-align: center;
+//         align-content: center;
+
+//         ul {
+//           width: 100%;
+//           align-items: center;
+//           text-align: center;
+//           align-content: center;
+
+//           li {
+//             align-items: center;
+//             text-align: center;
+//             align-content: center;
+//           }
+//         }
+
+//       }
+
+
+//     }
+//   }
+
+
+// }
