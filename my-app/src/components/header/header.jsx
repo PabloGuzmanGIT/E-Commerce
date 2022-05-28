@@ -127,17 +127,47 @@ export function Header() {
 
   return (
     <header className="header">
+      <div className="envoltorio2">
+        <h1>MY E-Shop</h1>
+        <nav className="navsecond">
+          <ul>
+            <li>
+              <NavLink to="/home" activeClassName="is-active">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/catalog" activeClassName="is-active">
+                Catalog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/delivery" activeClassName="is-active">
+                Delivery
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" activeClassName="is-active">
+                Contact
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" activeClassName="is-active">
+                About
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
       <div className="wrapper">
         <div className="navigate">
-        <NavLink
-          className="header_logo"
-          to="/"
-        >
-          My E-Shop
-        </NavLink>
+          <NavLink className="header_logo" to="/">
+            My E-Shop
+          </NavLink>
         </div>
         <div className="nav-button">
-          <div className="flex items-center justify-center">
+          <div className="hidenn flex items-center justify-center">
             <div className="w-full">
               <form
                 onSubmit={(evt) => {

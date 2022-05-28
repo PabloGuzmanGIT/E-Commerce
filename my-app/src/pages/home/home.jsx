@@ -98,16 +98,16 @@ export function PageHome() {
             <div className="page-home_section_3_content">
               <h2 className="text-center text-8xl py-12 font-sans font-bold">¿Qué es My E-shop?</h2>        
               <h3 href="" className="text-center text-5xl font-sans underline">Lee nuestra maravillosamente excepcional historia</h3>
-              <div class="cuadritos grid items-center grid-cols-3 text-5xl gap-40 px-40 pt-20 pb-10">
-                    <div className="">
+              <div class="basecuad grid items-center grid-cols-3 text-5xl gap-40 px-40 pt-20 pb-10">
+                    <div className="cuadritos">
                       <h3 className="text-4xl font-bold text-center px-10">Una Comunidad que hace el bien</h3>
                       <p className="text-justify text-3xl ">My E.Shop es un mercado internacional en línea al que acuden personas de todo el mundo para hacer, vender, comprar y coleccionar productos únicos. También somos una comunidad que impulsa cambios positivos para los pequeños negocios, las personas y el planeta. Estas son algunas de las formas en las que, juntos, creamos un efecto positivo.</p>
                     </div>
-                    <div className="">
+                    <div className="cuadritos">
                       <h3 className="text-4xl font-bold text-center px-10">Una Comunidad que hace el bien</h3>
                       <p className="text-justify text-3xl ">My E.Shop es un mercado internacional en línea al que acuden personas de todo el mundo para hacer, vender, comprar y coleccionar productos únicos. También somos una comunidad que impulsa cambios positivos para los pequeños negocios, las personas y el planeta. Estas son algunas de las formas en las que, juntos, creamos un efecto positivo.</p>
                     </div>
-                    <div className="">
+                    <div className="cuadritos">
                       <h3 className="text-4xl font-bold text-center px-10">Una Comunidad que hace el bien</h3>
                       <p className="text-justify text-3xl ">My E.Shop es un mercado internacional en línea al que acuden personas de todo el mundo para hacer, vender, comprar y coleccionar productos únicos. También somos una comunidad que impulsa cambios positivos para los pequeños negocios, las personas y el planeta. Estas son algunas de las formas en las que, juntos, creamos un efecto positivo.</p>
                     </div>                   

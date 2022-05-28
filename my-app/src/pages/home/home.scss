@@ -1,85 +1,91 @@
-
 .page-home {
-    position: relative;
-    &_section_1{
+    // position: relative;
+
+    &_section_1 {
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
     }
 
-    &_section_2{
+    &_section_2 {
         display: flex;
-        flex-direction: column;               
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-       
-        
+
+
     }
 
-    &_section_3{
+    &_section_3 {
         display: flex;
-        flex-direction: column;        
-        align-items: center;        
-          
-        padding-bottom: 100px; 
-        
-        &_content{
+        flex-direction: column;
+        align-items: center;
+
+        padding-bottom: 100px;
+
+        &_content {
             display: flex;
-            flex-direction: column;            
+            flex-direction: column;
             align-items: center;
-            
+
             // background-color: antiquewhite;
-            margin:auto;
-            
+            margin: auto;
+
         }
     }
 }
 
 
 @media screen and (max-width: 992px) {
-   
-    .page-home_section_1{
+
+    .page-home_section_1 {
         display: flex;
         justify-content: center;
-        
+
         flex-direction: column;
 
-        .card-import{
+        .card-import {
             display: grid;
         }
-        
-        
+
+
     }
-    .page-home_section_2{
+
+    .page-home_section_2 {
         display: flex;
         justify-content: center;
-        
+
         flex-direction: column;
-        .card-import{
+
+        .card-import {
             display: grid;
         }
-        
+
     }
-    .page-home_section_3{
+
+    .page-home_section_3 {
         display: flex;
         justify-content: center;
-        
+
         flex-direction: column;
-        .cuadritos{
-            display: flex;
-            flex-direction: column;
+        .page-home_section_3_content{
+           .basecuad{
+               display: flex;
+                flex-direction: column;
+           }
+            
         }
-        
-    
+
+
     }
-    .footer{
+
+    .footer {
         display: flex;
         flex-direction: column;
-        
-        width:100%;
-        margin:auto;
+
+        width: 100%;
+        margin: auto;
     }
-    
-  }
-  
+
+}
