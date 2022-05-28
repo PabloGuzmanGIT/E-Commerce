@@ -93,7 +93,7 @@ export function PageHome() {
             ))}    
           </div>
         </div> 
-        <div className="page-home_section_3 relative">
+        {/* <div className="page-home_section_3 relative">
           <div className=" bg-green-50	h-full absolute w-screen">
             <div className="page-home_section_3_content">
               <h2 className="text-center text-8xl py-12 font-sans font-bold">¿Qué es My E-shop?</h2>        
@@ -117,7 +117,7 @@ export function PageHome() {
           Ir al Centro de Ayuda</button>
             </div>
           </div>
-        </div> 
+        </div>  */}
     </div>    
   );
 }
