@@ -19,7 +19,7 @@ export function PageRegister() {
   })
  
   function saveUser(){ 
-    axios.post("http://127.0.0.1:8000/auth/register/",form)
+    axios.post("https://muebleria-g1.herokuapp.com/auth/register/",form)
     .then(() => {          
       alert("Se guardó correctamente")
       history.push("/home")

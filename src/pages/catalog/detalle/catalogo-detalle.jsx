@@ -26,7 +26,7 @@ export function PageCatalogoDetalle() {
   useEffect(() => {
     if (params.id) {
       axios
-        .get(`http://127.0.0.1:8000/muebles/producto/${params.id}`)
+        .get(`https://muebleria-g1.herokuapp.com/${params.id}`)
         .then((catalogo) => {
           setCatalogo(catalogo.data);
         })

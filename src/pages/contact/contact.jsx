@@ -18,7 +18,7 @@ export function PageContact() {
   })
  
   function saveContact(){ 
-    axios.post("http://127.0.0.1:8000/auth/contacto/",form)
+    axios.post("https://muebleria-g1.herokuapp.com/auth/contacto/",form)
     .then(() => {
       alert("Se guardaron los datos correctamente")
       history.push("home")
